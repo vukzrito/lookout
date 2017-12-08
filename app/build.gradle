@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [auth0Domain:"lookoutapp.auth0.com", auth0Scheme: "https"]
+        manifestPlaceholders = [auth0Domain: "lookoutapp.auth0.com", auth0Scheme: "https"]
     }
     buildTypes {
         release {
