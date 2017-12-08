@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bolo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_vehicles">VehiclesActivity</string>
+    <!---Auth0 config -->
+    <string name="com_auth0_client_id" translatable="false">qmCxlvhN2aadhC9QF4Yz6FijLbeekz5G</string>
+    <string name="com_auth0_domain" translatable="false">lookoutapp.auth0.com</string>
+</resources>
