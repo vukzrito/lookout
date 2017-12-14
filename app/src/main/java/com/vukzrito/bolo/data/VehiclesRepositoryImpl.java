@@ -10,15 +10,15 @@ import java.util.List;
 
 public class VehiclesRepositoryImpl implements VehiclesRepository {
     private ArrayList<Vehicle> vehicles;
-    private VehiclesApi api;
+    private WebApi api;
 
     public VehiclesRepositoryImpl() {
-        api = new VehiclesApiImpl();
+        api = new WebApiImpl();
     }
 
     @Override
     public void loadVehicles(@NonNull final LoadVehiclesCallback callback) {
-        api.getVehicles(new VehiclesApi.VehiclesServiceCallback<List<Vehicle>>() {
+        api.getVehicles(new WebApi.VehiclesServiceCallback<List<Vehicle>>() {
             @Override
             public void onLoaded(List<Vehicle> vehicles) {
                 callback.onLoaded(vehicles);

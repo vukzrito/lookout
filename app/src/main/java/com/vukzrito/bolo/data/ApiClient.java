@@ -7,11 +7,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class ApiClient {
-    public static final String BASE_URL = "http://localhost:3000";
-    public static Retrofit retrofit = null;
+class ApiClient {
+    private static final String BASE_URL = "http://localhost:3000";
+    private static Retrofit retrofit = null;
 
-    public static Retrofit getClient() {
+    static Retrofit getClient() {
         if (retrofit == null) {
             Gson gson = new GsonBuilder()
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")

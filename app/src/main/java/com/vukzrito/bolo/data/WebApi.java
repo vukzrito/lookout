@@ -4,11 +4,8 @@ import com.vukzrito.bolo.model.Vehicle;
 
 import java.util.List;
 
-/**
- * Created by RVukela on 2017/04/18.
- */
 
-public interface VehiclesApi {
+public interface WebApi {
 
     void getVehicles(VehiclesServiceCallback<List<Vehicle>> callback);
 

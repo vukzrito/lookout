@@ -8,7 +8,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VehiclesApiImpl implements VehiclesApi {
+public class WebApiImpl implements WebApi {
     @Override
     public void getVehicles(final VehiclesServiceCallback<List<Vehicle>> callback) {
         ApiInterface api = ApiClient.getClient().create(ApiInterface.class);

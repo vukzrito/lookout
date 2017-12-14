@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -61,6 +62,7 @@ public class VehiclesActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         adapter = new VehiclesAdapter();
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         userActionsListener.loadVehicles(true);
     }
 
@@ -115,7 +117,7 @@ public class VehiclesActivity extends AppCompatActivity
 
     @Override
     public void showVehicles(List<Vehicle> vehicleList) {
-
+        adapter.updateData(vehicleList);
     }
 
     @Override
