@@ -8,14 +8,15 @@
     tools:context="com.vukzrito.bolo.home.VehiclesActivity"
     tools:showIn="@layout/app_bar_vehicles">
 <android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe_refresh"
     >
-    <android.support.v7.app.AlertController.RecycleListView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/vehicles_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/vehicles_list"/>
+        android:layout_height="wrap_content" />
 </android.support.v4.widget.SwipeRefreshLayout>
 
 

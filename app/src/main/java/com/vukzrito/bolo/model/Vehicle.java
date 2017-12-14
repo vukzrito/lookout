@@ -11,6 +11,15 @@ public class Vehicle {
     private String description;
     private int year;
 
+    public Vehicle(String id, String VIN, String registrationNumber, String make, String model, String color) {
+        this.id = id;
+        this.VIN = VIN;
+        this.registrationNumber = registrationNumber;
+        this.make = make;
+        this.model = model;
+        this.color = color;
+    }
+
     public String getId() {
         return id;
     }

@@ -40,6 +40,8 @@ public class VehiclesActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicles);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        recyclerView = findViewById(R.id.vehicles_list);
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         setSupportActionBar(toolbar);
         userActionsListener = new VehiclesPresenter(this);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -106,7 +108,7 @@ public class VehiclesActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
