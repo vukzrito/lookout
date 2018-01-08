@@ -17,11 +17,18 @@ public class FakeVehiclesRepositoryImpl implements VehiclesRepository {
 
     @Override
     public void loadVehicles(@NonNull final LoadVehiclesCallback callback) {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.run();
+
         callback.onLoaded(vehicles);
     }
 

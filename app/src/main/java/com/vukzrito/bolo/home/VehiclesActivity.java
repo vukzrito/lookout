@@ -43,6 +43,12 @@ public class VehiclesActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         recyclerView = findViewById(R.id.vehicles_list);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                userActionsListener.loadVehicles(true);
+            }
+        });
         setSupportActionBar(toolbar);
         userActionsListener = new VehiclesPresenter(this);
         FloatingActionButton fab = findViewById(R.id.fab);
