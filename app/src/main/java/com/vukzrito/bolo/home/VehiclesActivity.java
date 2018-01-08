@@ -18,14 +18,17 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.vukzrito.bolo.R;
-import com.vukzrito.bolo.detail.DetailActivity;
 import com.vukzrito.bolo.home.VehiclesContract.UserActionsListener;
 import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.util.IntentFactory;
 
 import java.util.List;
 
 import butterknife.BindView;
 
+interface VehicleItemListener {
+    void onVehicleClicked(Vehicle vehicle);
+}
 
 public class VehiclesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, VehiclesContract.View {
@@ -66,7 +69,13 @@ public class VehiclesActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        adapter = new VehiclesAdapter();
+        VehicleItemListener clickListener = new VehicleItemListener() {
+            @Override
+            public void onVehicleClicked(Vehicle vehicle) {
+                userActionsListener.openVehicleDetail(vehicle);
+            }
+        };
+        adapter = new VehiclesAdapter(clickListener);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         userActionsListener.loadVehicles(true);
@@ -138,8 +147,7 @@ public class VehiclesActivity extends AppCompatActivity
 
     @Override
     public void showVehicleDetail(String vehicleId) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra("vehicle_id", vehicleId);
+        Intent intent = IntentFactory.createDetailIntent(vehicleId, this);
         startActivity(intent);
     }
 }

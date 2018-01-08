@@ -33,7 +33,7 @@ public class FakeVehiclesRepositoryImpl implements VehiclesRepository {
     }
 
     @Override
-    public void loadVehicle(@NonNull LoadVehicleCallback callback) {
+    public void loadVehicle(String vehicleId, @NonNull LoadVehicleCallback callback) {
         callback.onLoaded(vehicles.get(0));
     }
 

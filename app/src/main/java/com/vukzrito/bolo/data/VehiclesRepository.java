@@ -11,7 +11,7 @@ public interface VehiclesRepository {
 
     void loadVehicles(@NonNull LoadVehiclesCallback callback);
 
-    void loadVehicle(@NonNull LoadVehicleCallback callback);
+    void loadVehicle(String vehicleId, @NonNull LoadVehicleCallback callback);
 
 
     interface LoadVehiclesCallback {

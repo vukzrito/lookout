@@ -21,6 +21,7 @@ public class VehiclesRepositoryImpl implements VehiclesRepository {
         api.getVehicles(new WebApi.VehiclesServiceCallback<List<Vehicle>>() {
             @Override
             public void onLoaded(List<Vehicle> vehicles) {
+
                 callback.onLoaded(vehicles);
             }
 
@@ -34,7 +35,7 @@ public class VehiclesRepositoryImpl implements VehiclesRepository {
     }
 
     @Override
-    public void loadVehicle(@NonNull LoadVehicleCallback callback) {
+    public void loadVehicle(String vehicleId, @NonNull LoadVehicleCallback callback) {
         callback.onLoaded(vehicles.get(0));
     }
 }

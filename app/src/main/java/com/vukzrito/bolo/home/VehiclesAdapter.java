@@ -15,15 +15,20 @@ import com.vukzrito.bolo.model.Vehicle;
 import java.util.List;
 
 public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.ViewHolder> {
+    List<Vehicle> vehicles;
     private Context context;
-    private List<Vehicle> vehicles;
+    private VehicleItemListener itemClickListener;
+
+    VehiclesAdapter(VehicleItemListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View articleView = inflater.inflate(R.layout.vehicles_list_item_row, parent, false);
-        return new ViewHolder(articleView);
+        return new ViewHolder(articleView, itemClickListener);
     }
 
     @Override
@@ -49,14 +54,24 @@ public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.ViewHo
         this.notifyDataSetChanged();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView titleTextView;
         ImageView imageView;
+        VehicleItemListener itemClickListener;
 
-        ViewHolder(View itemView) {
+        ViewHolder(View itemView, VehicleItemListener itemClickListener) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.vehicle_list_item_title);
             imageView = itemView.findViewById(R.id.vehicle_list_item_image);
+            itemView.setOnClickListener(this);
+            this.itemClickListener = itemClickListener;
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Vehicle vehicle = vehicles.get(position);
+            itemClickListener.onVehicleClicked(vehicle);
         }
     }
 }
