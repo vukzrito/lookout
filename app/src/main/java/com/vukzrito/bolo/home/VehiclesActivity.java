@@ -58,6 +58,7 @@ public class VehiclesActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                userActionsListener.addVehicle();
             }
         });
 
@@ -148,6 +149,12 @@ public class VehiclesActivity extends AppCompatActivity
     @Override
     public void showVehicleDetail(String vehicleId) {
         Intent intent = IntentFactory.createDetailIntent(vehicleId, this);
+        startActivity(intent);
+    }
+
+    @Override
+    public void navigateToAddVehicle() {
+        Intent intent = IntentFactory.createAddVehicle(this);
         startActivity(intent);
     }
 }

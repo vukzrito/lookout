@@ -38,4 +38,9 @@ class VehiclesPresenter implements VehiclesContract.UserActionsListener {
     public void openVehicleDetail(Vehicle vehicle) {
         view.showVehicleDetail(vehicle.getId());
     }
+
+    @Override
+    public void addVehicle() {
+        view.navigateToAddVehicle();
+    }
 }

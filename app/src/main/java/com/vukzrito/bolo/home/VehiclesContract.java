@@ -11,10 +11,14 @@ import java.util.List;
         void showProgressIndicator(boolean active);
         void showErrorMessage(String errorMessage);
         void showVehicleDetail(String vehicleId);
+
+        void navigateToAddVehicle();
     }
 
     interface UserActionsListener {
         void loadVehicles(boolean forceUpdate);
         void openVehicleDetail(Vehicle vehicle);
+
+        void addVehicle();
     }
 }
