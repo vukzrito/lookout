@@ -9,4 +9,13 @@
     <!---Auth0 config -->
     <string name="com_auth0_client_id" translatable="false">qmCxlvhN2aadhC9QF4Yz6FijLbeekz5G</string>
     <string name="com_auth0_domain" translatable="false">lookoutapp.auth0.com</string>
+    <string name="label_registration_number">Registration Number</string>
+    <string name="label_vin">VIN</string>
+    <string name="label_make">Make</string>
+    <string name="label_model">Model</string>
+    <string name="label_color">Color</string>
+    <string name="label_incident_type">Incident type</string>
+    <string name="label_incident_date">Incident date</string>
+    <string name="add_vehicle_ad_id">ca-app-pub-4275089733786409/6594184354</string>
+    <string name="vehicles_ad_id">@string/add_vehicle_ad_id</string>
 </resources>

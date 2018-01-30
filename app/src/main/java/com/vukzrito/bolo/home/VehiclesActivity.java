@@ -17,6 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.vukzrito.bolo.R;
 import com.vukzrito.bolo.home.VehiclesContract.UserActionsListener;
 import com.vukzrito.bolo.model.Vehicle;
@@ -25,6 +28,8 @@ import com.vukzrito.bolo.util.IntentFactory;
 import java.util.List;
 
 import butterknife.BindView;
+
+import static com.vukzrito.bolo.util.Constants.ADMOB_APP_ID;
 
 interface VehicleItemListener {
     void onVehicleClicked(Vehicle vehicle);
@@ -67,6 +72,12 @@ public class VehiclesActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        MobileAds.initialize(this, ADMOB_APP_ID);
+
+        AdView adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

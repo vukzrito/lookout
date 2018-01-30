@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "535596849723",
+    "firebase_url": "https://lookout-e3362.firebaseio.com",
+    "project_id": "lookout-e3362",
+    "storage_bucket": "lookout-e3362.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535596849723:android:4a10c8ab87f8bdd9",
+        "android_client_info": {
+          "package_name": "com.vukzrito.bolo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535596849723-e0ah623l0iq2ll0noneqv6bsqu7d5voo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vukzrito.bolo",
+            "certificate_hash": "922178816900f94ba584adbd5e941b349fb601cf"
+          }
+        },
+        {
+          "client_id": "535596849723-npdtnn55dhp02kcst240pcsvlaa20plt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg2vxHFGjOPadLKU06iwLY3nshNnNld8I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535596849723-npdtnn55dhp02kcst240pcsvlaa20plt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
