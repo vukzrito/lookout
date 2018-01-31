@@ -9,7 +9,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.vukzrito.bolo.R;
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.model.Incident;
 import com.vukzrito.bolo.util.IntentFactory;
 
 import static com.vukzrito.bolo.util.Constants.ADMOB_APP_ID;
@@ -40,7 +40,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     }
 
     @Override
-    public void showVehicleDetail(Vehicle vehicle) {
+    public void showIncidentDetail(Incident incident) {
 
     }
 

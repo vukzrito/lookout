@@ -1,23 +1,27 @@
 package com.vukzrito.bolo.home;
 
 
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.model.Incident;
 
 import java.util.List;
 
- interface VehiclesContract {
-    interface View{
-        void showVehicles(List<Vehicle> vehicleList);
+interface IncidentsContract {
+    interface View {
+        void showIncidents(List<Incident> incidents);
+
         void showProgressIndicator(boolean active);
+
         void showErrorMessage(String errorMessage);
+
         void showVehicleDetail(String vehicleId);
 
-        void navigateToAddVehicle();
+        void navigateToAddIncident();
     }
 
     interface UserActionsListener {
         void loadVehicles(boolean forceUpdate);
-        void openVehicleDetail(Vehicle vehicle);
+
+        void openIncidentDetail(Incident incident);
 
         void addVehicle();
     }

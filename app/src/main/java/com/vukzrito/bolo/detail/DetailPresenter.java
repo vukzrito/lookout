@@ -1,13 +1,13 @@
 package com.vukzrito.bolo.detail;
 
-import com.vukzrito.bolo.data.VehiclesRepository;
+import com.vukzrito.bolo.data.IncidentsRepository;
 import com.vukzrito.bolo.detail.DetailContract.Interactor;
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.model.Incident;
 import com.vukzrito.bolo.util.DependencyContainer;
 
 
 public class DetailPresenter implements Interactor {
-    private VehiclesRepository repository;
+    private IncidentsRepository repository;
     private DetailContract.View view;
 
     public DetailPresenter(DetailContract.View view) {
@@ -18,11 +18,11 @@ public class DetailPresenter implements Interactor {
     @Override
     public void loadVehicleDetails(String vehicleId) {
         view.showLoadingIndicator(true);
-        repository.loadVehicle(vehicleId, new VehiclesRepository.LoadVehicleCallback() {
+        repository.loadVehicle(vehicleId, new IncidentsRepository.LoadIncidentCallback() {
             @Override
-            public void onLoaded(Vehicle vehicle) {
+            public void onLoaded(Incident incident) {
                 view.showLoadingIndicator(false);
-                view.showVehicleDetail(vehicle);
+                view.showIncidentDetail(incident);
             }
 
             @Override

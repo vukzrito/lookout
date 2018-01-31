@@ -22,8 +22,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.vukzrito.bolo.R;
-import com.vukzrito.bolo.home.VehiclesContract.UserActionsListener;
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.home.IncidentsContract.UserActionsListener;
+import com.vukzrito.bolo.model.Incident;
 import com.vukzrito.bolo.util.IntentFactory;
 
 import java.util.List;
@@ -32,18 +32,18 @@ import butterknife.BindView;
 
 import static com.vukzrito.bolo.util.Constants.ADMOB_APP_ID;
 
-interface VehicleItemListener {
-    void onVehicleClicked(Vehicle vehicle);
+interface IncidentItemListener {
+    void onIncidentClicked(Incident incident);
 }
 
-public class VehiclesActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, VehiclesContract.View {
+public class IncidentsActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, IncidentsContract.View {
     private UserActionsListener userActionsListener;
     @BindView(R.id.vehicles_list)
     private RecyclerView recyclerView;
     @BindView(R.id.swipe_refresh)
     private SwipeRefreshLayout swipeRefreshLayout;
-    private VehiclesAdapter adapter;
+    private IncidentsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +58,9 @@ public class VehiclesActivity extends AppCompatActivity
                 userActionsListener.loadVehicles(true);
             }
         });
+
         setSupportActionBar(toolbar);
-        userActionsListener = new VehiclesPresenter(this);
+        userActionsListener = new IncidentsPresenter(this);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,13 +90,13 @@ public class VehiclesActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        VehicleItemListener clickListener = new VehicleItemListener() {
+        IncidentItemListener clickListener = new IncidentItemListener() {
             @Override
-            public void onVehicleClicked(Vehicle vehicle) {
-                userActionsListener.openVehicleDetail(vehicle);
+            public void onIncidentClicked(Incident incident) {
+                userActionsListener.openIncidentDetail(incident);
             }
         };
-        adapter = new VehiclesAdapter(clickListener);
+        adapter = new IncidentsAdapter(clickListener);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         userActionsListener.loadVehicles(true);
@@ -151,8 +152,8 @@ public class VehiclesActivity extends AppCompatActivity
     }
 
     @Override
-    public void showVehicles(List<Vehicle> vehicleList) {
-        adapter.updateData(vehicleList);
+    public void showIncidents(List<Incident> incidents) {
+        adapter.updateData(incidents);
     }
 
     @Override
@@ -166,13 +167,13 @@ public class VehiclesActivity extends AppCompatActivity
     }
 
     @Override
-    public void showVehicleDetail(String vehicleId) {
-        Intent intent = IntentFactory.createDetailIntent(vehicleId, this);
+    public void showVehicleDetail(String incidentId) {
+        Intent intent = IntentFactory.createDetailIntent(incidentId, this);
         startActivity(intent);
     }
 
     @Override
-    public void navigateToAddVehicle() {
+    public void navigateToAddIncident() {
         Intent intent = IntentFactory.createAddVehicle(this);
         startActivity(intent);
     }

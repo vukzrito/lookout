@@ -1,10 +1,10 @@
 package com.vukzrito.bolo.util;
 
-import com.vukzrito.bolo.data.FakeVehiclesRepositoryImpl;
-import com.vukzrito.bolo.data.VehiclesRepository;
+import com.vukzrito.bolo.data.FakeIncidentsRepositoryImpl;
+import com.vukzrito.bolo.data.IncidentsRepository;
 
 public class DependencyContainer {
-    public static VehiclesRepository provideVehiclesRepository() {
-        return new FakeVehiclesRepositoryImpl();
+    public static IncidentsRepository provideVehiclesRepository() {
+        return new FakeIncidentsRepositoryImpl();
     }
 }

@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(AndroidJUnit4.class)
-public class VehiclesActivityTest {
+public class IncidentsActivityTest {
 
     @Rule
-    public ActivityTestRule<VehiclesActivity> mActivityTestRule = new ActivityTestRule<>(VehiclesActivity.class);
+    public ActivityTestRule<IncidentsActivity> mActivityTestRule = new ActivityTestRule<>(IncidentsActivity.class);
 
     @Test
     public void vehiclesActivityTest() {

@@ -1,10 +1,10 @@
 package com.vukzrito.bolo.detail;
 
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.model.Incident;
 
 interface DetailContract {
      interface View {
-         void showVehicleDetail(Vehicle vehicle);
+         void showIncidentDetail(Incident incident);
          void showLoadingIndicator(boolean active);
          void showErrorMessage(String errorMessage);
      }

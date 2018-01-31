@@ -14,7 +14,7 @@
         <activity android:name=".search.SearchActivity" />
         <activity android:name=".detail.DetailActivity" />
         <activity
-            android:name=".home.VehiclesActivity"
+            android:name=".home.IncidentsActivity"
             android:label="Be On The Lookout"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,7 +26,7 @@
         <activity
             android:name=".add.AddVehicleActivity"
             android:label="New car lookout request"
-            android:parentActivityName=".home.VehiclesActivity" />
+            android:parentActivityName=".home.IncidentsActivity" />
     </application>
 
 </manifest>

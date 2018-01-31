@@ -1,17 +1,17 @@
 package com.vukzrito.bolo.data;
 
-import com.vukzrito.bolo.model.Vehicle;
+import com.vukzrito.bolo.model.Incident;
 
 import java.util.List;
 
 
 public interface WebApi {
 
-    void getVehicles(VehiclesServiceCallback<List<Vehicle>> callback);
+    void getIncidents(IncidentsServiceCallback<List<Incident>> callback);
 
-    void getVehicle(VehiclesServiceCallback<Vehicle> callback);
+    void getIncident(IncidentsServiceCallback<Incident> callback);
 
-    interface VehiclesServiceCallback<T> {
+    interface IncidentsServiceCallback<T> {
         void onLoaded(T articles);
 
         void onError(String errorMessage);
