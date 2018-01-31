@@ -35,7 +35,7 @@ public class VehiclesAdapter extends RecyclerView.Adapter<VehiclesAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         Vehicle vehicle = vehicles.get(position);
         holder.titleTextView.setText(String.format("%s %s", vehicle.getMake(), vehicle.getModel()));
-        Picasso.with(context).load(R.drawable.ic_directions_car_black)
+        Picasso.with(context).load(vehicle.getImageUrl())
                 .error(R.drawable.ic_directions_car_black)
                 .fit()
                 .into(holder.imageView);

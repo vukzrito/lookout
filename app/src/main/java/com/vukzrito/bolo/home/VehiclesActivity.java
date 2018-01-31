@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -75,8 +76,15 @@ public class VehiclesActivity extends AppCompatActivity
 
         MobileAds.initialize(this, ADMOB_APP_ID);
 
-        AdView adView = findViewById(R.id.adView);
+        final AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         adView.loadAd(adRequest);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
