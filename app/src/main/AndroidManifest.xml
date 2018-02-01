@@ -27,6 +27,13 @@
             android:name=".add.AddVehicleActivity"
             android:label="New car lookout request"
             android:parentActivityName=".home.IncidentsActivity" />
+        <activity android:name=".login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

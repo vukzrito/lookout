@@ -21,6 +21,8 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.vukzrito.bolo.R;
 import com.vukzrito.bolo.home.IncidentsContract.UserActionsListener;
 import com.vukzrito.bolo.model.Incident;
@@ -44,6 +46,7 @@ public class IncidentsActivity extends AppCompatActivity
     @BindView(R.id.swipe_refresh)
     private SwipeRefreshLayout swipeRefreshLayout;
     private IncidentsAdapter adapter;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +77,6 @@ public class IncidentsActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         MobileAds.initialize(this, ADMOB_APP_ID);
 
         final AdView adView = findViewById(R.id.adView);
@@ -149,6 +151,12 @@ public class IncidentsActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
     }
 
     @Override
