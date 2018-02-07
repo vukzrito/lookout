@@ -13,6 +13,8 @@ public interface IncidentsRepository {
 
     void loadVehicle(String incidentId, @NonNull LoadIncidentCallback callback);
 
+    void addIncident(Incident incident);
+
 
     interface LoadIncidentsCallback {
         void onLoaded(List<Incident> incidents);
@@ -22,6 +24,12 @@ public interface IncidentsRepository {
 
     interface LoadIncidentCallback {
         void onLoaded(Incident incident);
+
+        void onError(String errorMessage);
+    }
+
+    interface AddIncidentCallback {
+        void onAdded(Incident incident);
 
         void onError(String errorMessage);
     }

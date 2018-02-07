@@ -12,12 +12,14 @@ import com.vukzrito.bolo.R;
 
 import static com.vukzrito.bolo.util.Constants.ADMOB_APP_ID;
 
-public class AddVehicleActivity extends AppCompatActivity {
+public class AddIncidentActivity extends AppCompatActivity {
+    private AddIncidentContract.Interactor presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vehicle);
         MobileAds.initialize(this, ADMOB_APP_ID);
+        presenter = new AddIncidentPresenter();
 
         final AdView adView = findViewById(R.id.adView);
         adView.setAdListener(new AdListener() {

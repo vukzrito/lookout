@@ -4,7 +4,7 @@ package com.vukzrito.bolo.util;
 import android.content.Context;
 import android.content.Intent;
 
-import com.vukzrito.bolo.add.AddVehicleActivity;
+import com.vukzrito.bolo.add.AddIncidentActivity;
 import com.vukzrito.bolo.detail.DetailActivity;
 
 public class IntentFactory {
@@ -17,6 +17,6 @@ public class IntentFactory {
     }
 
     public static Intent createAddVehicle(Context context) {
-        return new Intent(context, AddVehicleActivity.class);
+        return new Intent(context, AddIncidentActivity.class);
     }
 }

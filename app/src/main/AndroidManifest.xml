@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add.AddVehicleActivity"
+            android:name=".add.AddIncidentActivity"
             android:label="New car lookout request"
             android:parentActivityName=".home.IncidentsActivity" />
         <activity android:name=".login.LoginActivity">

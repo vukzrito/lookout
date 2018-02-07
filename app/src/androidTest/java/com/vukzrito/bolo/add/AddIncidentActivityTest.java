@@ -13,9 +13,9 @@ import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
-public class AddVehicleActivityTest {
+public class AddIncidentActivityTest {
     @Rule
-    public ActivityTestRule<AddVehicleActivity> activityTestRule = new ActivityTestRule<>(AddVehicleActivity.class);
+    public ActivityTestRule<AddIncidentActivity> activityTestRule = new ActivityTestRule<>(AddIncidentActivity.class);
 
     @Test
     public void testThatSubmitButtonSubmitsForm() {
