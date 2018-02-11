@@ -38,4 +38,19 @@ public class IncidentsRepositoryImpl implements IncidentsRepository {
     public void loadVehicle(String vehicleId, @NonNull LoadIncidentCallback callback) {
         callback.onLoaded(incidents.get(0));
     }
+
+    @Override
+    public void addIncident(Incident incident, final AddIncidentCallback callback) {
+        api.addIncident(incident, new WebApi.AddIncidentServiceCallback() {
+            @Override
+            public void onAdded(Incident incident) {
+                callback.onAdded(incident);
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                callback.onError(errorMessage);
+            }
+        });
+    }
 }

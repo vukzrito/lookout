@@ -11,9 +11,15 @@ public interface WebApi {
 
     void getIncident(IncidentsServiceCallback<Incident> callback);
 
+    void addIncident(Incident incident, AddIncidentServiceCallback callback);
+
     interface IncidentsServiceCallback<T> {
         void onLoaded(T articles);
 
+        void onError(String errorMessage);
+    }
+    interface AddIncidentServiceCallback {
+        void onAdded(Incident incident);
         void onError(String errorMessage);
     }
 }

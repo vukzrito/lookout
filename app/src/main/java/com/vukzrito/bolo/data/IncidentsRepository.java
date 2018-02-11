@@ -13,7 +13,7 @@ public interface IncidentsRepository {
 
     void loadVehicle(String incidentId, @NonNull LoadIncidentCallback callback);
 
-    void addIncident(Incident incident);
+    void addIncident(Incident incident, AddIncidentCallback callback);
 
 
     interface LoadIncidentsCallback {
