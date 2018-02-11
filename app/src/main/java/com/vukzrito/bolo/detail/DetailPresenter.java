@@ -6,13 +6,13 @@ import com.vukzrito.bolo.model.Incident;
 import com.vukzrito.bolo.util.DependencyContainer;
 
 
-public class DetailPresenter implements Interactor {
+class DetailPresenter implements Interactor {
     private IncidentsRepository repository;
     private DetailContract.View view;
 
-    public DetailPresenter(DetailContract.View view) {
+     DetailPresenter(DetailContract.View view) {
         this.view = view;
-        repository = DependencyContainer.provideVehiclesRepository();
+        repository = DependencyContainer.provideIncidentsRepository();
     }
 
     @Override

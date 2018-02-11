@@ -3,7 +3,7 @@ package com.vukzrito.bolo.add;
 
 import com.vukzrito.bolo.model.Incident;
 
-public interface AddIncidentContract {
+ interface AddIncidentContract {
     interface View {
         void showIncidentDetail(Incident incident);
 

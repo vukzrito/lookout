@@ -1,16 +1,16 @@
 package com.vukzrito.bolo.add;
 
 import com.vukzrito.bolo.data.IncidentsRepository;
-import com.vukzrito.bolo.data.IncidentsRepositoryImpl;
 import com.vukzrito.bolo.model.Incident;
+import com.vukzrito.bolo.util.DependencyContainer;
 
-public class AddIncidentPresenter implements AddIncidentContract.Interactor {
+ class AddIncidentPresenter implements AddIncidentContract.Interactor {
     private IncidentsRepository repository;
     private AddIncidentContract.View view;
 
     AddIncidentPresenter(AddIncidentContract.View view) {
         this.view = view;
-        repository = new IncidentsRepositoryImpl();
+        repository = DependencyContainer.provideIncidentsRepository();
     }
 
     @Override

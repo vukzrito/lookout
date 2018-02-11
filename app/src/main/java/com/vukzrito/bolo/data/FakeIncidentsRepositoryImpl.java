@@ -39,6 +39,12 @@ public class FakeIncidentsRepositoryImpl implements IncidentsRepository {
         callback.onLoaded(incidents.get(0));
     }
 
+    @Override
+    public void addIncident(Incident incident, AddIncidentCallback callback) {
+        incidents.add(incident);
+        callback.onAdded(incident);
+    }
+
     private List<Incident> generateTestVehicles() {
         List<Incident> incidents = new ArrayList<>();
         Vehicle v1 = new Vehicle("gA5gGWyugs", "KF4NY6P8764FBQLV",

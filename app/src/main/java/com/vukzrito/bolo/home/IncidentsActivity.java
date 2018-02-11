@@ -21,8 +21,6 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.vukzrito.bolo.R;
 import com.vukzrito.bolo.home.IncidentsContract.UserActionsListener;
 import com.vukzrito.bolo.model.Incident;
@@ -46,7 +44,6 @@ public class IncidentsActivity extends AppCompatActivity
     @BindView(R.id.swipe_refresh)
     private SwipeRefreshLayout swipeRefreshLayout;
     private IncidentsAdapter adapter;
-    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,7 +153,7 @@ public class IncidentsActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+//        FirebaseUser user = firebaseAuth.getCurrentUser();
     }
 
     @Override
