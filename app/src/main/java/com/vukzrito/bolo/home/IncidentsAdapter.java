@@ -34,11 +34,13 @@ public class IncidentsAdapter extends RecyclerView.Adapter<IncidentsAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Incident incident = incidents.get(position);
-        holder.titleTextView.setText(String.format("%s %s", incident.getVehicle().getMake(), incident.getVehicle().getModel()));
-        Picasso.with(context).load(incident.getVehicle().getImageUrl())
-                .error(R.drawable.ic_directions_car_black)
-                .fit()
-                .into(holder.imageView);
+        if (incident.getVehicle() != null) {
+            holder.titleTextView.setText(String.format("%s %s", incident.getVehicle().getMake(), incident.getVehicle().getModel()));
+            Picasso.with(context).load(incident.getVehicle().getImageUrl())
+                    .error(R.drawable.ic_directions_car_black)
+                    .fit()
+                    .into(holder.imageView);
+        }
     }
 
     @Override

@@ -11,10 +11,10 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    @GET("Incidents/")
+    @GET("incidents/")
     Call<List<Incident>> getAllIncidents();
 
-    @POST("add-incident/")
+    @POST("createIncident/")
     Call<Incident> createIncident(@Body Incident incident);
 
 

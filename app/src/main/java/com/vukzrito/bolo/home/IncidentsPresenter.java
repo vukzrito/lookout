@@ -1,8 +1,8 @@
 package com.vukzrito.bolo.home;
 
-import com.vukzrito.bolo.data.FakeIncidentsRepositoryImpl;
 import com.vukzrito.bolo.data.IncidentsRepository;
 import com.vukzrito.bolo.model.Incident;
+import com.vukzrito.bolo.util.DependencyContainer;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ class IncidentsPresenter implements IncidentsContract.UserActionsListener {
 
     IncidentsPresenter(IncidentsContract.View view) {
         this.view = view;
-        repository = new FakeIncidentsRepositoryImpl();
+        repository = DependencyContainer.provideIncidentsRepository();
     }
 
     @Override

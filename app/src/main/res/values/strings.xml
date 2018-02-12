@@ -18,4 +18,12 @@
     <string name="label_incident_date">Incident date</string>
     <string name="add_vehicle_ad_id">ca-app-pub-4275089733786409/6594184354</string>
     <string name="vehicles_ad_id">@string/add_vehicle_ad_id</string>
+    <string name="label_incident_location">Location</string>
+
+    <string-array name="incident_types">
+        <item>Stolen</item>
+        <item>Hijacked</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

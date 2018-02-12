@@ -26,6 +26,7 @@ import com.vukzrito.bolo.util.DependencyContainer;
             @Override
             public void onError(String errorMessage) {
                 view.showErrorMessage(errorMessage);
+                view.showLoadingIndicator(false);
             }
         });
     }
